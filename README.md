@@ -33,3 +33,12 @@ Cài package:
 
 ```bash
 npm install
+## Tài khoản demo
+
+Có thể tự đăng ký tài khoản mới để test API.
+
+Nếu muốn test nhanh các API cần đăng nhập, có thể dùng tài khoản mẫu:
+
+```text
+Email: alice@gmail.com
+Password: 123456
