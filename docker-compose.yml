@@ -1,0 +1,21 @@
+# MySQL chinh cho dev/grading. Port 3307 de khong xung dot MySQL80 (3306) tren may thi.
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: pinterest_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pinterest_root_pass
+      MYSQL_DATABASE: pinterest_orm
+      MYSQL_USER: pinterest
+      MYSQL_PASSWORD: pinterest_capstone_pwd
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-ppinterest_root_pass"]
+      interval: 10s
+      retries: 10
+
+volumes:
+  mysql_data:
